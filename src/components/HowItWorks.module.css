@@ -1,0 +1,137 @@
+.section {
+    padding: 100px 20px;
+    background: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 80px;
+}
+
+.steps {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 20px 40px;
+    /* Bottom padding for scrollbar/shadow */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for cleaner look but allow scroll */
+.steps::-webkit-scrollbar {
+    display: none;
+}
+
+.steps {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (min-width: 768px) {
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: visible;
+        padding: 40px 0;
+    }
+}
+
+.stepCard {
+    min-width: 280px;
+    /* Ensure cards have width for scrolling */
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.stepCard:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.stepHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stepNumber {
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stepTime {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--primary-light);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.stepTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #000000;
+}
+
+.stepDesc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.stepList {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+    text-align: left;
+    display: inline-block;
+}
+
+.stepList li {
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.integrations {
+    text-align: center;
+    border-top: 1px solid var(--border);
+    padding-top: 60px;
+}
+
+.integrationLogos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    opacity: 0.7;
+}
+
+.logoPlaceholder {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,182 @@
+.section {
+    padding: 100px 20px;
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 968px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Time Saving Card */
+.timeComparison {
+    margin-bottom: 24px;
+}
+
+.timeBlock {
+    margin-bottom: 16px;
+}
+
+.blockLabel {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.timeBar {
+    height: 24px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+}
+
+.barBefore {
+    width: 100%;
+    background: #475569;
+}
+
+.barAfter {
+    width: 10%;
+    /* Roughly proportional to 5min vs 2h */
+    background: var(--primary);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+.savingsBox {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.savingsText {
+    color: #34d399;
+    font-weight: 700;
+    display: block;
+}
+
+/* Performance Card */
+.statRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.statLabel {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.statValue {
+    text-align: right;
+}
+
+.oldValue {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.newValue {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.increase {
+    font-size: 0.8rem;
+    color: #34d399;
+    margin-left: 8px;
+}
+
+/* Growth Card */
+.graphContainer {
+    height: 200px;
+    position: relative;
+    border-left: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    margin: 20px 0 10px 10px;
+}
+
+.graphLine {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lineWithout {
+    border-top: 2px dashed var(--text-muted);
+    width: 100%;
+    height: 40%;
+    top: 60%;
+    position: absolute;
+    transform-origin: left bottom;
+    transform: skewY(-10deg);
+    /* Simple representation */
+    opacity: 0.5;
+}
+
+.curvePath {
+    stroke: var(--primary);
+    stroke-width: 3;
+    fill: none;
+    filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.5));
+}

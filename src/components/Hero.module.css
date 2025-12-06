@@ -1,0 +1,173 @@
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    padding: 120px 20px 80px;
+    background: #ffffff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f3f4f6;
+    /* Gray 100 */
+    border: 1px solid #e5e7eb;
+    /* Gray 200 */
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: var(--primary);
+    /* Indigo */
+    margin-bottom: 32px;
+    animation: fadeDown 0.8s ease-out;
+}
+
+.badgeIcon {
+    color: var(--accent);
+    /* Red */
+}
+
+.headline {
+    max-width: 600px;
+    margin: 0 auto 24px;
+    /* Reduced from 40px */
+    text-align: center;
+    line-height: 1.6;
+    animation: fadeUp 0.8s ease-out 0.4s backwards;
+}
+
+.ctaGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    /* Reduced from 24px */
+    padding-top: 20px;
+    margin-bottom: 40px;
+    /* Reduced from 60px */
+    animation: fadeUp 0.8s ease-out 0.6s backwards;
+}
+
+.primaryButton {
+    display: inline-block;
+    background: #000000;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    /* Slightly tighter padding */
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.primaryButton:hover {
+    transform: translateY(-2px);
+    background: #374151;
+    /* Gray 700 */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.socialProof {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.fireIcon {
+    color: #f59e0b;
+}
+
+.videoWrapper {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoomIn 1s ease-out 0.8s backwards;
+}
+
+.playButton {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.playButton:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.playIcon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    margin-left: 4px;
+    /* Optical adjustment */
+}
+
+/* Animations */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

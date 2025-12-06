@@ -1,0 +1,125 @@
+.section {
+    padding: 100px 20px;
+    background-color: var(--background);
+    position: relative;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.problemGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .problemGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-primary);
+}
+
+.quote {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    padding-left: 12px;
+    border-left: 2px solid var(--primary);
+    line-height: 1.6;
+}
+
+.painPoints {
+    margin-bottom: 24px;
+}
+
+.painPoint {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.metrics {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.metricItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.metricItem:last-child {
+    margin-bottom: 0;
+}
+
+.metricLabel {
+    color: var(--text-muted);
+}
+
+.metricValue {
+    color: #ef4444;
+    /* Red for negative metrics */
+    font-weight: 600;
+}
+
+.highlightBox {
+    margin-top: 80px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(56, 189, 248, 0.1));
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.highlightTitle {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.highlightText {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
