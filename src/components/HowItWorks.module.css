@@ -114,24 +114,28 @@
 }
 
 .integrations {
-    text-align: center;
     border-top: 1px solid var(--border);
     padding-top: 60px;
+    overflow: hidden;
+    /* Hide overflow for marquee effect */
 }
 
 .integrationLogos {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    opacity: 0.7;
+    gap: 40px;
+    /* Increased gap for better separation */
+    opacity: 0.8;
+    width: max-content;
+    /* Ensure container accommodates all items */
 }
 
 .logoPlaceholder {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     color: var(--text-secondary);
     font-weight: 500;
     font-size: 1.1rem;
+    white-space: nowrap;
+    /* Prevent text wrapping */
 }

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -13,20 +13,20 @@ export default function Footer() {
                 <div className={styles.links}>
                     <div className={styles.column}>
                         <h4>Product</h4>
-                        <Link href="/waitlist">Waitlist</Link>
-                        <Link href="/pricing">Pricing</Link>
-                        <Link href="/book-demo">Book a Demo</Link>
+                        <Link to="/waitlist">Waitlist</Link>
+                        <Link to="/pricing">Pricing</Link>
+                        <Link to="/book-demo">Book a Demo</Link>
                     </div>
                     <div className={styles.column}>
                         <h4>Support</h4>
-                        <Link href="/help-center">Help Center</Link>
-                        <Link href="/contact">Contact Us</Link>
-                        <Link href="/security">Security</Link>
+                        <Link to="/help-center">Help Center</Link>
+                        <Link to="/contact">Contact Us</Link>
+                        <Link to="/security">Security</Link>
                     </div>
                     <div className={styles.column}>
                         <h4>Legal</h4>
-                        <Link href="/legal/privacy-policy">Privacy Policy</Link>
-                        <Link href="/legal/terms-of-service">Terms of Service</Link>
+                        <Link to="/legal/privacy-policy">Privacy Policy</Link>
+                        <Link to="/legal/terms-of-service">Terms of Service</Link>
                     </div>
                 </div>
             </div>

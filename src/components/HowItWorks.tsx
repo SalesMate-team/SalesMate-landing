@@ -1,4 +1,5 @@
 import styles from './HowItWorks.module.css';
+import { motion } from 'framer-motion';
 
 export default function HowItWorks() {
     return (
@@ -37,16 +38,31 @@ export default function HowItWorks() {
 
                 <div className={styles.integrations}>
                     <div className={styles.integrationLogos}>
-                        {/* Using text placeholders instead of actual logos for simplicity in this artifact, 
-                in a real app these would be SVGs/Images */}
-                        <span className={styles.logoPlaceholder}>📝 Notion</span>
-                        <span className={styles.logoPlaceholder}>📁 Google Drive</span>
-                        <span className={styles.logoPlaceholder}>📅 Calendar</span>
-                        <span className={styles.logoPlaceholder}>💼 Salesforce</span>
-                        <span className={styles.logoPlaceholder}>🎥 Zoom</span>
-                        <span className={styles.logoPlaceholder}>📹 Meet</span>
-                        <span className={styles.logoPlaceholder}>📊 HubSpot</span>
-                        <span className={styles.logoPlaceholder}>💬 Slack</span>
+                        <motion.div
+                            className={styles.integrationLogos} // Re-using class for layout styles inside wrapper if needed, but here we treat outer as wrapper? 
+                            // Actually, let's restructure slightly. The outer .integrations is the overflow hidden frame.
+                            // The inner one needs to be the moving track.
+                            animate={{ x: ["0%", "-50%"] }}
+                            transition={{
+                                repeat: Infinity,
+                                ease: "linear",
+                                duration: 25, // Adjust speed here
+                            }}
+                            style={{ display: "flex", gap: "40px" }}
+                        >
+                            {[...Array(2)].map((_, i) => (
+                                <div key={i} style={{ display: "flex", gap: "40px" }}>
+                                    <span className={styles.logoPlaceholder}>📝 Notion</span>
+                                    <span className={styles.logoPlaceholder}>📁 Google Drive</span>
+                                    <span className={styles.logoPlaceholder}>📅 Calendar</span>
+                                    <span className={styles.logoPlaceholder}>💼 Salesforce</span>
+                                    <span className={styles.logoPlaceholder}>🎥 Zoom</span>
+                                    <span className={styles.logoPlaceholder}>📹 Meet</span>
+                                    <span className={styles.logoPlaceholder}>📊 HubSpot</span>
+                                    <span className={styles.logoPlaceholder}>💬 Slack</span>
+                                </div>
+                            ))}
+                        </motion.div>
                     </div>
                 </div>
             </div>

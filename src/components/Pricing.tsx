@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import styles from './Pricing.module.css';
 import { Check } from 'lucide-react';
 
@@ -25,7 +25,7 @@ export default function Pricing() {
                             <li className={styles.featureItem}><Check size={18} className={styles.checkIcon} /> 커뮤니티 접근</li>
                         </ul>
 
-                        <Link href="/waitlist" className={styles.buttonOutline}>
+                        <Link to="/waitlist" className={styles.buttonOutline}>
                             웨이트리스트 등록
                         </Link>
                     </div>
@@ -46,7 +46,7 @@ export default function Pricing() {
                             <li className={styles.featureItem}><Check size={18} className={styles.checkIcon} /> Notion, CRM 연동</li>
                         </ul>
 
-                        <Link href="/waitlist" className={styles.buttonPrimary}>
+                        <Link to="/waitlist" className={styles.buttonPrimary}>
                             얼리버드 예약하기
                         </Link>
                         <p className={styles.subtext}>결제는 서비스 출시 시점에 진행됩니다.</p>
@@ -67,7 +67,7 @@ export default function Pricing() {
                             <li className={styles.featureItem}><Check size={18} className={styles.checkIcon} /> 사내 시스템 연동 (API)</li>
                         </ul>
 
-                        <Link href="/waitlist" className={styles.buttonOutline}>
+                        <Link to="/waitlist" className={styles.buttonOutline}>
                             도입 문의하기
                         </Link>
                     </div>

@@ -1,5 +1,6 @@
 import styles from './BenefitsSection.module.css';
 import { Clock, TrendingUp, Rocket } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function BenefitsSection() {
     return (
@@ -12,7 +13,13 @@ export default function BenefitsSection() {
                 <div className={styles.grid}>
 
                     {/* Card 1: Time Savings */}
-                    <div className={styles.card}>
+                    <motion.div
+                        className={styles.card}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0 }}
+                    >
                         <div className={styles.cardHeader}>
                             <Clock size={28} className="text-blue-400" />
                             <h3 className={styles.cardTitle}>시간을 90% 아낍니다</h3>
@@ -35,10 +42,16 @@ export default function BenefitsSection() {
                                 (시급 10만원, 주 5회 미팅 기준)
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Card 2: Performance */}
-                    <div className={styles.card}>
+                    <motion.div
+                        className={styles.card}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
                         <div className={styles.cardHeader}>
                             <TrendingUp size={28} className="text-green-400" />
                             <h3 className={styles.cardTitle}>성과가 눈에 띄게 좋아집니다</h3>
@@ -67,10 +80,16 @@ export default function BenefitsSection() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Card 3: Growth */}
-                    <div className={styles.card}>
+                    <motion.div
+                        className={styles.card}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
                         <div className={styles.cardHeader}>
                             <Rocket size={28} className="text-purple-400" />
                             <h3 className={styles.cardTitle}>매 미팅마다 성장합니다</h3>
@@ -94,10 +113,9 @@ export default function BenefitsSection() {
                                 "4주 전의 나와 지금의 나는<br />완전 다른 사람입니다."
                             </p>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+                    </motion.div>
+                </div >
+            </div >
+        </section >
     );
 }

@@ -1,5 +1,6 @@
 import styles from './SolutionSection.module.css';
 import { Check, Brain, MessageSquare, LineChart, FileText } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function SolutionSection() {
     return (
@@ -11,7 +12,13 @@ export default function SolutionSection() {
                 </div>
 
                 {/* Step 1: Pre-meeting */}
-                <div className={styles.stepBlock}>
+                <motion.div
+                    className={styles.stepBlock}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <div className={styles.stepContent}>
                         <span className={styles.stepLabel}>1️⃣ 미팅 전: 완벽한 준비</span>
                         <h3 className={styles.stepTitle}>준비 시간 2시간 → 15분으로 단축</h3>
@@ -74,10 +81,16 @@ export default function SolutionSection() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Step 2: During Meeting */}
-                <div className={`${styles.stepBlock} ${styles.reverse}`}>
+                <motion.div
+                    className={`${styles.stepBlock} ${styles.reverse}`}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <div className={styles.stepContent}>
                         <span className={styles.stepLabel}>2️⃣ 미팅 중: 실시간 AI 서포트</span>
                         <h3 className={styles.stepTitle}>베테랑 코치가 옆에 있는 것처럼</h3>
@@ -126,10 +139,16 @@ export default function SolutionSection() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Step 3: Post Meeting */}
-                <div className={styles.stepBlock}>
+                <motion.div
+                    className={styles.stepBlock}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
                     <div className={styles.stepContent}>
                         <span className={styles.stepLabel}>3️⃣ 미팅 후: 구체적인 개선안</span>
                         <h3 className={styles.stepTitle}>매 미팅마다 성장하는 나</h3>
@@ -176,8 +195,7 @@ export default function SolutionSection() {
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </motion.div>
             </div>
         </section>
     );

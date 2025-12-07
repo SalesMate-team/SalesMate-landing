@@ -1,5 +1,6 @@
 import styles from './ProblemSection.module.css';
 import { Moon, AlertCircle, Frown } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ProblemSection() {
     return (
@@ -9,7 +10,13 @@ export default function ProblemSection() {
                     <h2 className={styles.sectionTitle}>이런 경험, 있으시죠?</h2>
                 </div>
 
-                <div className={styles.problemGrid}>
+                <motion.div
+                    className={styles.problemGrid}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
                     {/* Night Before */}
                     <div className={styles.card}>
                         <div className={styles.cardTitle}>
@@ -78,7 +85,7 @@ export default function ProblemSection() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className={styles.highlightBox}>
                     <span className={styles.highlightTitle}>💡 핵심 문제</span>
@@ -87,6 +94,6 @@ export default function ProblemSection() {
                     </p>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }

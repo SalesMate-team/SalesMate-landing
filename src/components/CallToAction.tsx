@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import styles from './CallToAction.module.css';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -13,7 +13,7 @@ export default function CallToAction() {
                 </p>
 
                 <div className={styles.ctaWrapper}>
-                    <Link href="/waitlist" className={styles.submitButton}>
+                    <Link to="/waitlist" className={styles.submitButton}>
                         🚀 지금 시작하기 (Waitlist Join)
                     </Link>
                     <p className={styles.subtext}>
