@@ -1,12 +1,9 @@
-'use client';
-
-import { useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useSearchParams, Link } from 'react-router-dom';
 import { CheckCircle, Loader2, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 
-function AuthCallbackContent() {
-    const searchParams = useSearchParams();
+export default function AuthCallbackPage() {
+    const [searchParams] = useSearchParams();
     const [status, setStatus] = useState<'processing' | 'success' | 'error'>('processing');
     const [errorMsg, setErrorMsg] = useState('');
 
@@ -94,7 +91,7 @@ function AuthCallbackContent() {
                             <p className="text-red-500">{errorMsg || 'Something went wrong.'}</p>
                         </div>
                         <div className="pt-4">
-                            <Link href="/" className="text-sm text-gray-600 hover:text-indigo-600 font-medium">
+                            <Link to="/" className="text-sm text-gray-600 hover:text-indigo-600 font-medium">
                                 Return to Home
                             </Link>
                         </div>
@@ -106,13 +103,5 @@ function AuthCallbackContent() {
                 <p className="text-sm text-gray-400">Minute AI</p>
             </div>
         </div>
-    );
-}
-
-export default function AuthCallback() {
-    return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <AuthCallbackContent />
-        </Suspense>
     );
 }

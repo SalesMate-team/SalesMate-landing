@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import styles from './page.module.css';
+import { Link } from 'react-router-dom';
+import styles from './Blog.module.css';
 
 export default function BlogPage() {
     return (
@@ -10,7 +10,7 @@ export default function BlogPage() {
             </header>
 
             <div className={styles.blogList}>
-                <Link href="#" className={styles.post}>
+                <Link to="#" className={styles.post}>
                     <span className={styles.date}>October 13, 2025</span>
                     <h2 className={styles.postTitle}>Why Meeting Bots Feel Like Surveillance</h2>
                     <p className={styles.excerpt}>
@@ -18,7 +18,7 @@ export default function BlogPage() {
                     </p>
                 </Link>
 
-                <Link href="#" className={styles.post}>
+                <Link to="#" className={styles.post}>
                     <span className={styles.date}>September 18, 2025</span>
                     <h2 className={styles.postTitle}>MinuteAi Thesis on Virality and Hype</h2>
                     <p className={styles.excerpt}>
@@ -26,7 +26,7 @@ export default function BlogPage() {
                     </p>
                 </Link>
 
-                <Link href="#" className={styles.post}>
+                <Link to="#" className={styles.post}>
                     <span className={styles.date}>September 13, 2025</span>
                     <h2 className={styles.postTitle}>Launching People Search & Memory</h2>
                     <p className={styles.excerpt}>

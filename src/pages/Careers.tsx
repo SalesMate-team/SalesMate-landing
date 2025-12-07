@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import styles from './page.module.css';
+import { Link } from 'react-router-dom';
+import styles from './Careers.module.css';
 
 export default function CareersPage() {
     return (
@@ -16,15 +16,15 @@ export default function CareersPage() {
             <div className={styles.jobList}>
                 <h2 style={{ marginBottom: '1rem' }}>Open Positions</h2>
 
-                <Link href="#" className={styles.job}>
+                <Link to="#" className={styles.job}>
                     <span className={styles.role}>Founding Engineer (Full Stack)</span>
                     <span className={styles.location}>San Francisco / Remote</span>
                 </Link>
-                <Link href="#" className={styles.job}>
+                <Link to="#" className={styles.job}>
                     <span className={styles.role}>AI Research Scientist</span>
                     <span className={styles.location}>San Francisco</span>
                 </Link>
-                <Link href="#" className={styles.job}>
+                <Link to="#" className={styles.job}>
                     <span className={styles.role}>Product Designer</span>
                     <span className={styles.location}>Remote</span>
                 </Link>

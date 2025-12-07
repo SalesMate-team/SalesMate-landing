@@ -1,16 +1,7 @@
-import { notFound } from 'next/navigation';
+import { useParams } from 'react-router-dom';
 
-export function generateStaticParams() {
-    return [
-        { slug: 'privacy-policy' },
-        { slug: 'terms-of-service' },
-        { slug: 'dpa' },
-        { slug: 'subprocessors' },
-    ];
-}
-
-export default function LegalPage({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+export default function LegalPage() {
+    const { slug } = useParams<{ slug: string }>();
 
     const content: Record<string, { title: string; sections: { heading: string; body: string }[] }> = {
         'privacy-policy': {
@@ -26,7 +17,7 @@ export default function LegalPage({ params }: { params: { slug: string } }) {
                 },
                 {
                     heading: "3. How We Use Information",
-                    body: "We use the information we collect to provide, maintain, and improve our services, to process your transactions, and to communicate with you about new features, updates, and offers."
+                    body: "We use the information we collect to provide, maintain, and improve our services, to process your transactions, and to communicate with us about new features, updates, and offers."
                 },
                 {
                     heading: "4. Data Security",
@@ -79,10 +70,15 @@ export default function LegalPage({ params }: { params: { slug: string } }) {
         }
     };
 
-    const pageContent = content[slug];
+    const pageContent = slug ? content[slug] : null;
 
     if (!pageContent) {
-        return notFound();
+        return (
+            <div style={{ padding: '8rem 2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+                <h1 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--foreground)' }}>404 - Page Not Found</h1>
+                <p style={{ color: '#a1a1aa' }}>The legal document you are looking for does not exist.</p>
+            </div>
+        );
     }
 
     return (
