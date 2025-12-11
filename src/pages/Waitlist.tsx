@@ -1,16 +1,34 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../lib/firebase';
 import styles from './Waitlist.module.css';
 
 export default function Waitlist() {
     const [email, setEmail] = useState('');
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // In a real app, send to backend API
-        setTimeout(() => setSubmitted(true), 500);
+        setLoading(true);
+        setError('');
+
+        try {
+            await addDoc(collection(db, 'waitlist'), {
+                email,
+                createdAt: serverTimestamp(),
+                source: 'landing_page'
+            });
+            setSubmitted(true);
+        } catch (err) {
+            console.error("Error adding document: ", err);
+            setError('Something went wrong. Please try again.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -36,10 +54,12 @@ export default function Waitlist() {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
+                                disabled={loading}
                             />
-                            <button type="submit" className={styles.button}>
-                                대기자 등록하기
+                            <button type="submit" className={styles.button} disabled={loading}>
+                                {loading ? '등록 중...' : '대기자 등록하기'}
                             </button>
+                            {error && <p style={{ color: 'red', marginTop: '0.5rem', fontSize: '0.875rem' }}>{error}</p>}
                         </form>
 
                         <div className={styles.badges}>
