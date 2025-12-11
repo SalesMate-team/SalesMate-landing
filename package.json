@@ -2,7 +2,7 @@
   "name": "minuteai-landing",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://SalesMate-team.github.io/SalesMate-landing",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
