@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 // Imports for Pages
@@ -47,7 +47,7 @@ function Home() {
 
 function App() {
     return (
-        <Router>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -70,7 +70,7 @@ function App() {
                 <Route path="/use-cases/:slug" element={<UseCasePage />} />
             </Routes>
             <Footer />
-        </Router>
+        </BrowserRouter>
     );
 }
 
